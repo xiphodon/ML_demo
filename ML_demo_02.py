@@ -14,7 +14,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
-from sklearn import cross_validation
+from sklearn import model_selection
 
 
 
@@ -34,7 +34,7 @@ def init2():
     :return:
     '''
     # 加载数据
-    columns = ["mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "model year", "origin",
+    columns = ["mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "year", "origin",
                "car name"]
     # delim_whitespace空格分隔数据，names加入列名
     cars = pd.read_table(r"data/auto-mpg.data", delim_whitespace=True, names=columns)
@@ -228,15 +228,15 @@ def ML_04(admissions):
 
 
     # sklearn库中使用交叉验证
-    # 数据分块，参数：数据集数量，需要分成几个部分，是否打乱顺序，选用随机数种子
-    kf = cross_validation.KFold(len(admissions), 5, shuffle=True, random_state=8)
+    # 数据分块，参数：需要分成几个部分，是否打乱顺序，选用随机数种子
+    kf = model_selection.KFold(n_splits=5, shuffle=True, random_state=8)
     lr = LogisticRegression()
     # 交叉验证，参数：分类模型，关注的特征，真实值，返回什么值，数据分块
-    accuracies = cross_validation.cross_val_score(lr, admissions[["gpa"]], admissions["actual_label"], scoring="accuracy", cv=kf)
+    accuracies = model_selection.cross_val_score(lr, admissions[["gpa"]], admissions["actual_label"], scoring="accuracy", cv=kf)
     print(accuracies) # 交叉验证返回的正确率列表
     print(np.mean(accuracies)) # 平均正确率
 
-    roc_auc_list = cross_validation.cross_val_score(lr, admissions[["gpa"]], admissions["actual_label"], scoring="roc_auc", cv=kf)
+    roc_auc_list = model_selection.cross_val_score(lr, admissions[["gpa"]], admissions["actual_label"], scoring="roc_auc", cv=kf)
     print(roc_auc_list)  # 交叉验证返回的ROC曲线积分面积列表
     print(np.mean(roc_auc_list))  # 平均值
 
@@ -248,7 +248,59 @@ def ML_05(cars):
     :param cars: 数据集
     :return:
     '''
-    
+
+    # 预测汽车产地（三分类问题）
+
+    # 把指定列值出现的种类提取出，设置为新的列，参数prefix="year"，新列为year开头，eg：year_1
+    div_year = pd.get_dummies(cars["year"], prefix="year")
+    # print(div_year.head())
+
+    div_cyl = pd.get_dummies(cars["cylinders"], prefix="cyl")
+    # print(div_cyl)
+
+    # 把多个数据集按行（axis=1）拼接在一起
+    cars = pd.concat([cars, div_year, div_cyl], axis=1)
+    # print(cars.head())
+
+    cars = cars.drop("year", axis=1)
+    cars = cars.drop("cylinders", axis=1)
+    print(cars.head())
+
+    # 数据洗牌
+    shuffled_rows = np.random.permutation(cars.index)
+    shuffled_cars = cars.iloc[shuffled_rows]
+
+    # 数据前70%行的数据作为训练集，后30%行的数据作为测试集
+    train_row = int(cars.shape[0] * 0.7)
+    train = shuffled_cars.iloc[:train_row]
+    test = shuffled_cars.iloc[train_row:]
+
+    # 标签
+    unique_origins = cars["origin"].unique() # 保留数组中不同的值
+    unique_origins.sort()
+
+    # 训练模型字典集合
+    models = {}
+    # 筛选出“cyl”或“year”开头的特征
+    features = [c for c in train.columns if c.startswith("cyl") or c.startswith("year")]
+
+    x_train = train[features]
+    x_test = test[features]
+
+    # 训练分类模型
+    for origin in unique_origins: # 类别有多少个就要做多少次二分类
+        lr = LogisticRegression()
+        y_train = train["origin"] == origin
+        lr.fit(x_train, y_train)
+        models[origin] = lr
+
+    # 测试分类模型
+    testing_probs = pd.DataFrame(columns=unique_origins) # 创建列名为unique_origins的空DataFrame
+    for origin in unique_origins:
+        testing_probs[origin] = models[origin].predict_proba(x_test)[:,1]
+
+    print(testing_probs)
+
 
 
 if __name__ == "__main__":
