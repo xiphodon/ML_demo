@@ -8,7 +8,7 @@
 
 
 
-# 分析汽车油耗
+# 线性回归分析汽车油耗
 
 import numpy as np
 import pandas as pd
