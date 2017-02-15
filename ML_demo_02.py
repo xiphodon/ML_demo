@@ -14,6 +14,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
+from sklearn import cross_validation
 
 
 
@@ -25,6 +26,20 @@ def init():
     admissions = pd.read_csv(r"data/admissions.csv")
     print(admissions.head())
     return admissions
+
+
+def init2():
+    '''
+    数据初始化
+    :return:
+    '''
+    # 加载数据
+    columns = ["mpg", "cylinders", "displacement", "horsepower", "weight", "acceleration", "model year", "origin",
+               "car name"]
+    # delim_whitespace空格分隔数据，names加入列名
+    cars = pd.read_table(r"data/auto-mpg.data", delim_whitespace=True, names=columns)
+    return cars
+
 
 
 def ML_01(admissions):
@@ -152,10 +167,95 @@ def ML_03(admissions):
     print(auc_score)
 
 
+def ML_04(admissions):
+    '''
+    交叉验证
+    :return:
+    '''
+    np.random.seed(8)
+    # 把真实结果copy入新列
+    admissions["actual_label"] = admissions["admit"]
+    admissions = admissions.drop("admit", axis=1)
+
+    # 打乱数据索引顺序
+    shuffled_index = np.random.permutation(admissions.index)
+    print(shuffled_index)
+
+    # 按照打乱索引取出数据集
+    shuffled_admissions = admissions.loc[shuffled_index]
+    print(shuffled_admissions.head())
+
+    # 按照新顺序重新设置索引
+    admissions = shuffled_admissions.reset_index()
+    print(admissions.head())
+
+    # 添加新列“fold”，把数据分为5份
+    admissions.ix[0:128, "fold"] = 1
+    admissions.ix[129:257, "fold"] = 2
+    admissions.ix[258:386, "fold"] = 3
+    admissions.ix[387:514, "fold"] = 4
+    admissions.ix[515:644, "fold"] = 5
+    admissions["fold"] = admissions["fold"].astype("int") # fold列数据转型为int型
+    print(admissions.head())
+    print(admissions.tail())
+
+    # 交叉验证
+    def train_and_test(admissions):
+        '''
+        交叉验证实现方法
+        :param admissions: 数据集
+        :return: 交叉验证正确率均值
+        '''
+        fold_accuracies = [] # 正确率列表
+        for fold in range(1,6): # 数据集分为5份
+            lr = LogisticRegression()
+            train = admissions[admissions["fold"] != fold] # 训练集
+            _test = admissions[admissions["fold"] == fold] # 测试集
+            test = _test.copy()
+
+            lr.fit(train[["gpa"]], train["actual_label"]) # 训练模型
+            labels = lr.predict(test[["gpa"]]) # 测试集预测结果
+            test["predicted_label"] = labels # 创建测试集预测结果列
+
+            matches = test["predicted_label"] == test["actual_label"]
+            correct_predictions = test[matches] # 筛选出预测正确数量
+            fold_accuracies.append(len(correct_predictions) / float(len(test))) # 计算正确率并加入列表
+        print(fold_accuracies)
+        return np.mean(fold_accuracies) # 返回正确率列表均值
+
+    average_accuracy = train_and_test(admissions)
+    print(average_accuracy)
+
+
+    # sklearn库中使用交叉验证
+    # 数据分块，参数：数据集数量，需要分成几个部分，是否打乱顺序，选用随机数种子
+    kf = cross_validation.KFold(len(admissions), 5, shuffle=True, random_state=8)
+    lr = LogisticRegression()
+    # 交叉验证，参数：分类模型，关注的特征，真实值，返回什么值，数据分块
+    accuracies = cross_validation.cross_val_score(lr, admissions[["gpa"]], admissions["actual_label"], scoring="accuracy", cv=kf)
+    print(accuracies) # 交叉验证返回的正确率列表
+    print(np.mean(accuracies)) # 平均正确率
+
+    roc_auc_list = cross_validation.cross_val_score(lr, admissions[["gpa"]], admissions["actual_label"], scoring="roc_auc", cv=kf)
+    print(roc_auc_list)  # 交叉验证返回的ROC曲线积分面积列表
+    print(np.mean(roc_auc_list))  # 平均值
+
+
+def ML_05(cars):
+    '''
+    逻辑回归多分类
+    (one vs all)
+    :param cars: 数据集
+    :return:
+    '''
+    
 
 
 if __name__ == "__main__":
     admissions = init()
+    cars = init2()
     # ML_01(admissions)
     # ML_02(admissions)
-    ML_03(admissions)
+    # ML_03(admissions)
+    # ML_04(admissions)
+    ML_05(cars)
