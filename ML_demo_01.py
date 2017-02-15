@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
 
 
 def init():
@@ -71,6 +72,12 @@ def ML_02(cars):
     plt.scatter(cars["weight"], predictions, c="blue")
 
     plt.show()
+
+    # 计算均方误差(真实值，预测值)
+    mse = mean_squared_error(cars["mpg"], predictions)
+    print(mse)
+    rmse = mse ** 0.5 # 标准差
+    print(rmse)
 
 if __name__ == "__main__":
     cars = init()
