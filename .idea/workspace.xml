@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c7c483-0d42-456b-a8cd-d6f87178c589" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ML_demo_04.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/income.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ML_demo_02.py" afterPath="$PROJECT_DIR$/ML_demo_02.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,35 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ML_demo_01.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ML_demo_01.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#221#239#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ML_demo_02.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ML_demo_02.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#218#236#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ML_demo_03.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ML_demo_03.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ML_demo_03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1726">
-              <caret line="167" column="40" lean-forward="true" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
+            <state relative-caret-position="149">
+              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding>
                 <element signature="e#214#232#0" expanded="true" />
               </folding>
@@ -55,22 +31,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pga.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/pga.csv">
+      <file leaf-file-name="ML_demo_04.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ML_demo_04.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto-mpg.data" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/auto-mpg.data">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="339">
+              <caret line="129" column="23" lean-forward="true" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+              <folding>
+                <element signature="e#216#234#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +52,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>#!/usr/bin/env python # -*- coding: utf-8 -*- # @Time    : 2017/2/17 15:45 # @Author  : GuoChang # @Site    : https://github.com/xiphodon # @File    : ML_demo_04.py # @Software: PyCharm Community Edition   # 决策树算法   import numpy as np import pandas as pd import matplotlib.pyplot as plt   def ML_01():     '''     决策树算法（人口普查数据）     :return:     '''     columns = [&quot;age&quot;, &quot;workclass&quot;, &quot;fnlwgt&quot;, &quot;education&quot;, &quot;education_num&quot;,&quot;marital_status&quot;,&quot;occupation&quot;,&quot;relationship&quot;,&quot;race&quot;,&quot;sex&quot;,&quot;capital_gain&quot;,&quot;capital_loss&quot;,&quot;hours_per_week&quot;,&quot;native_country&quot;,&quot;high_income&quot;]      if __name__ == &quot;__main__&quot;:     ML_01()</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -93,6 +66,7 @@
         <option value="$PROJECT_DIR$/ML_demo_01.py" />
         <option value="$PROJECT_DIR$/ML_demo_02.py" />
         <option value="$PROJECT_DIR$/ML_demo_03.py" />
+        <option value="$PROJECT_DIR$/ML_demo_04.py" />
       </list>
     </option>
   </component>
@@ -130,6 +104,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -139,15 +127,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../pandas_demo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\python\python_workspace\ML_demo\data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\python\python_workspace\ML_demo\data" />
       <recent name="D:\python\python_workspace\ML_demo" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\python\python_workspace\ML_demo\data" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.ML_demo_03">
+  <component name="RunManager" selected="Python.ML_demo_04">
     <configuration default="false" name="ML_demo_01" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -195,6 +183,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML_demo" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML_demo_03.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ML_demo_04" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML_demo" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML_demo_04.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -333,16 +338,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_01" />
       <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_02" />
       <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_03" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ML_demo_04" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_03" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_02" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_01" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_04" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_03" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_02" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ML_demo_01" />
       </list>
     </recent_temporary>
   </component>
@@ -361,11 +368,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2799378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -378,7 +386,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -395,7 +402,7 @@
         <state relative-caret-position="551">
           <caret line="29" column="15" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="29" selection-end-column="15" />
           <folding>
-            <element signature="e#221#239#0" expanded="true" />
+            <element signature="e#221#239#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -405,7 +412,7 @@
         <state relative-caret-position="209">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="13" selection-end-column="31" />
           <folding>
-            <element signature="e#218#236#0" expanded="true" />
+            <element signature="e#218#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -462,7 +469,7 @@
         <state relative-caret-position="209">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#218#236#0" expanded="true" />
+            <element signature="e#218#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -488,17 +495,35 @@
         <state relative-caret-position="57">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#221#239#0" expanded="true" />
+            <element signature="e#221#239#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ML_demo_03.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1726">
-          <caret line="167" column="40" lean-forward="true" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
+        <state relative-caret-position="149">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
             <element signature="e#214#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/income.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_demo_04.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="129" column="23" lean-forward="true" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+          <folding>
+            <element signature="e#216#234#0" expanded="true" />
           </folding>
         </state>
       </provider>
