@@ -7,7 +7,7 @@
 # @Software: PyCharm Community Edition
 
 
-# 使用逻辑回归分类（留学申请数据）
+# 使用逻辑回归分类
 
 import numpy as np
 import pandas as pd
@@ -20,7 +20,7 @@ from sklearn import model_selection
 
 def init():
     '''
-    初始化数据
+    初始化数据（留学申请数据）
     :return:
     '''
     admissions = pd.read_csv(r"data/admissions.csv")
@@ -30,7 +30,7 @@ def init():
 
 def init2():
     '''
-    数据初始化
+    数据初始化（车辆数据）
     :return:
     '''
     # 加载数据
