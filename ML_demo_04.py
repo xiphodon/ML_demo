@@ -7,11 +7,13 @@
 # @Software: PyCharm Community Edition
 
 
-# 决策树算法
+# 决策树算法，随机森林算法
 
 
 import numpy as np
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import metrics
 import matplotlib.pyplot as plt
 import math
 
@@ -113,26 +115,79 @@ def ML_01(income):
 
     # print(calc_information_gain(income, "age", "high_income"))
 
+    # 列名
     columns = ["age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation",
                "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country"]
 
-    information_gains = []
 
-    # 计算所有列作为划分的熵值，选择信息增益最大的列名
-    for col in columns:
-        information_gain = calc_information_gain(income, col, "high_income")
-        information_gains.append(information_gain)
+    def find_best_column(data, target_name, columns):
+        '''
+        寻找划分最好的列
+        :param data: 数据集
+        :param target_name: 目标名
+        :param columns: 列名
+        :return:
+        '''
+        information_gains = []
 
-    highest_gain_index = information_gains.index(max(information_gains))
+        # 计算所有列作为划分的熵值，选择信息增益最大的列名
+        for col in columns:
+            information_gain = calc_information_gain(income, col, "high_income")
+            information_gains.append(information_gain)
 
-    highest_gain = columns[highest_gain_index] # 信息增益最大的列名
+        highest_gain_index = information_gains.index(max(information_gains))
 
-    print(highest_gain)
+        highest_gain = columns[highest_gain_index]  # 信息增益最大的列名
+
+        return highest_gain
 
 
+    income_split = find_best_column(income, "high_income", columns)
+    print(income_split)
+
+
+
+def ML_02(income):
+    '''
+    使用sklearn.linear决策树
+    :return:
+    '''
+
+
+    # 列名
+    columns = ["age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation",
+               "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country"]
+
+    # 实例化决策树，参数： max_depth=7决策树深度最多为7，最小划分阈值为10（超过10则再进行划分）
+    dtc = DecisionTreeClassifier(random_state=1, max_depth=7, min_samples_split=10)
+
+    # 训练决策树
+    dtc.fit(income[columns][:400], income["high_income"][:400])
+
+    # 预测值
+    train_predictions = dtc.predict(income[columns][:400])
+    test_predictions = dtc.predict(income[columns][400:])
+
+    # roc值训练集与测试集对比（越大越好）
+    train_auc = metrics.roc_auc_score(income["high_income"][:400], train_predictions)
+    test_auc = metrics.roc_auc_score(income["high_income"][400:], test_predictions)
+
+    print(train_auc)
+    print(test_auc)
+
+
+
+def ML_03(income):
+    '''
+    随机森林算法
+    :param income: 数据集
+    :return:
+    '''
 
 
 
 if __name__ == "__main__":
     income = init()
-    ML_01(income)
+    # ML_01(income)
+    ML_02(income)
+    ML_03(income)
