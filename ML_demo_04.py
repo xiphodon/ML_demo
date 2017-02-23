@@ -13,6 +13,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 import matplotlib.pyplot as plt
 import math
@@ -158,8 +159,9 @@ def ML_02(income):
     columns = ["age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation",
                "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country"]
 
-    # 实例化决策树，参数： max_depth=7决策树深度最多为7，最小划分阈值为10（超过10则再进行划分）
-    dtc = DecisionTreeClassifier(random_state=1, max_depth=7, min_samples_split=10)
+    # 实例化决策树，参数： max_depth=7决策树深度最多为7，最小划分阈值为10（超过10则再进行划分）,
+    # splitter="random"表示随机选取特征，max_features="auto"表示为最大特征数
+    dtc = DecisionTreeClassifier(random_state=1, max_depth=7, min_samples_split=10, splitter="random", max_features="auto")
 
     # 训练决策树
     dtc.fit(income[columns][:400], income["high_income"][:400])
@@ -179,15 +181,25 @@ def ML_02(income):
 
 def ML_03(income):
     '''
-    随机森林算法
+    随机森林算法(RF)
     :param income: 数据集
     :return:
     '''
+    # 列名
+    columns = ["age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation",
+               "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country"]
+
+    # n_estimators=10 随机森林中有5棵树
+    rfc = RandomForestClassifier(n_estimators=10, random_state=1, min_samples_leaf=2)
+    rfc.fit(income[columns][:400], income["high_income"][:400])
+
+    predictions = rfc.predict(income[columns][400:])
+    print(metrics.roc_auc_score(income["high_income"][400:], predictions))
 
 
 
 if __name__ == "__main__":
     income = init()
     # ML_01(income)
-    ML_02(income)
+    # ML_02(income)
     ML_03(income)
