@@ -189,7 +189,7 @@ def ML_03(income):
     columns = ["age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation",
                "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_per_week", "native_country"]
 
-    # n_estimators=10 随机森林中有5棵树
+    # n_estimators=10 随机森林中有10棵树
     rfc = RandomForestClassifier(n_estimators=10, random_state=1, min_samples_leaf=2)
     rfc.fit(income[columns][:400], income["high_income"][:400])
 
