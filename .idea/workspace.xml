@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98c7c483-0d42-456b-a8cd-d6f87178c589" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/nba_2013.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ML_demo_06.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/cleaned_loans2007.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/iris.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ML_demo_05.py" afterPath="$PROJECT_DIR$/ML_demo_05.py" />
     </list>
@@ -22,7 +24,7 @@
       <file leaf-file-name="ML_demo_03.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ML_demo_03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="285">
               <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
               <folding>
                 <element signature="e#214#232#0" expanded="true" />
@@ -55,13 +57,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ML_demo_05.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ML_demo_05.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ML_demo_05.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="143" column="50" lean-forward="true" selection-start-line="143" selection-start-column="50" selection-end-line="143" selection-end-column="50" />
+            <state relative-caret-position="380">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding>
                 <element signature="e#215#233#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ML_demo_01.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ML_demo_01.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ML_demo_06.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ML_demo_06.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+              <folding>
+                <element signature="e#214#232#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,6 +116,7 @@
         <option value="$PROJECT_DIR$/ML_demo_03.py" />
         <option value="$PROJECT_DIR$/ML_demo_04.py" />
         <option value="$PROJECT_DIR$/ML_demo_05.py" />
+        <option value="$PROJECT_DIR$/ML_demo_06.py" />
       </list>
     </option>
   </component>
@@ -160,24 +185,7 @@
       <recent name="D:\python\python_workspace\ML_demo\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ML_demo_05">
-    <configuration default="false" name="ML_demo_01" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ML_demo" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML_demo_01.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.ML_demo_06">
     <configuration default="false" name="ML_demo_02" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -242,6 +250,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML_demo" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML_demo_05.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ML_demo_06" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML_demo" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML_demo_06.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -381,19 +406,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_01" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_02" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_03" />
-      <item index="3" class="java.lang.String" itemvalue="Python.ML_demo_04" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ML_demo_05" />
+      <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_02" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_03" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_04" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ML_demo_05" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ML_demo_06" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_05" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_04" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_03" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ML_demo_02" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ML_demo_01" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ML_demo_06" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ML_demo_05" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ML_demo_04" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ML_demo_03" />
+        <item index="4" class="java.lang.String" itemvalue="Python.ML_demo_02" />
       </list>
     </recent_temporary>
   </component>
@@ -657,13 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ML_demo_01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Python35-32/Lib/site-packages/pandas/core/frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -694,41 +712,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ML_demo_03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="e#214#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ML_demo_02.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2926">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding>
-            <element signature="e#218#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/114_congress.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ML_demo_04.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="e#223#241#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -748,12 +736,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/iris.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="57" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_demo_03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding>
+            <element signature="e#214#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_demo_02.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2926">
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding>
+            <element signature="e#218#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_demo_04.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding>
+            <element signature="e#223#241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ML_demo_05.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="143" column="50" lean-forward="true" selection-start-line="143" selection-start-column="50" selection-end-line="143" selection-end-column="50" />
+        <state relative-caret-position="380">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
             <element signature="e#215#233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_demo_01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cleaned_loans2007.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_demo_06.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+          <folding>
+            <element signature="e#214#232#0" expanded="true" />
           </folding>
         </state>
       </provider>

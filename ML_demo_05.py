@@ -37,6 +37,16 @@ def init_02():
     # print(nba.head())
     return nba
 
+def init_03():
+    '''
+    数据初始化
+    （鸢尾花数据）
+    :return:
+    '''
+    iris = pd.read_csv(r"data/iris.csv")
+    # print(iris.head())
+    return iris
+
 def ML_01(votes):
     '''
     聚类初试
@@ -144,10 +154,10 @@ def ML_03(nba):
     visualize_clusters(point_guards, num_clusters)
 
 
-
 if __name__ == "__main__":
     votes = init_01()
     nba = init_02()
+    iris = init_03()
     # ML_01(votes)
     # ML_02(votes)
     ML_03(nba)
